@@ -2,7 +2,7 @@
   /* primary */
   --color-purple-50: hsl(260, 100%, 95%);
   --color-purple-300: hsl(264, 82%, 80%);
-  --color-purple-50: hsl(263, 55%, 52%);
+  --color-purple-500: hsl(263, 55%, 52%);
   /* neutral */
   --color-white: hsl(0, 0%, 100%);
   --color-grey-100: hsl(214, 17%, 92%);
@@ -35,6 +35,92 @@ html {
   scroll-behavior: smooth;
 }
 
+// review later, maybe remove
 body {
   font-size: 0.8125rem;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+  margin: 4rem 2rem;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 0.5rem;
+  padding: 2rem;
+
+  &.item-a {
+    background-color: var(--color-purple-500);
+  }
+
+  &.item-b {
+    background-color: var(--color-grey-500);
+  }
+
+  &.item-c,
+  &.item-e {
+    background-color: var(--color-white);
+    color: var(--color-dark-blue);
+  }
+
+  &.item-d {
+    background-color: var(--color-dark-blue);
+  }
+}
+
+.author-avatar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  img {
+    border: 0.125rem solid var(--color-white);
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    object-fit: cover;
+  }
+
+  figcaption {
+    font-weight: bold;
+    font-size: 0.875rem;
+  }
+}
+
+.item-header {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+@media (min-width: 90rem) {
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      'item-a item-a item-b item-e'
+      'item-c item-d item-d item-e';
+    margin: 4rem 6rem;
+  }
+
+  .grid-item {
+    &.item-a {
+      grid-area: item-a;
+    }
+    &.item-b {
+      grid-area: item-b;
+    }
+    &.item-c {
+      grid-area: item-c;
+    }
+    &.item-d {
+      grid-area: item-d;
+    }
+    &.item-e {
+      grid-area: item-e;
+    }
+  }
 }
