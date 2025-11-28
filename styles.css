@@ -18,6 +18,14 @@
   --line-height-base: 1.4;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
 html {
   box-sizing: border-box;
   background-color: var(--color-grey-100);
