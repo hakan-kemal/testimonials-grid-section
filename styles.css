@@ -169,6 +169,9 @@ html {
 
   .item-a {
     grid-area: item-a;
+    background-image: url('./images/bg-pattern-quotation.svg');
+    background-repeat: no-repeat;
+    background-position-x: 23.5rem;
   }
   .item-b {
     grid-area: item-b;
@@ -192,6 +195,7 @@ html {
       'item-a item-a item-b item-e'
       'item-c item-d item-d item-e';
     margin: 14.25rem auto 13.625rem;
+    max-height: 36rem;
     max-width: 72rem;
   }
 
