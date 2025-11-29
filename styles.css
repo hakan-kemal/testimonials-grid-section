@@ -35,7 +35,7 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
+.page-wrapper {
   display: flex;
   min-height: 100vh;
   font-size: 0.8125rem;
@@ -167,22 +167,20 @@ body {
     max-width: 41rem;
   }
 
-  .grid-item {
-    &.item-a {
-      grid-area: item-a;
-    }
-    &.item-b {
-      grid-area: item-b;
-    }
-    &.item-c {
-      grid-area: item-c;
-    }
-    &.item-d {
-      grid-area: item-d;
-    }
-    &.item-e {
-      grid-area: item-e;
-    }
+  .item-a {
+    grid-area: item-a;
+  }
+  .item-b {
+    grid-area: item-b;
+  }
+  .item-c {
+    grid-area: item-c;
+  }
+  .item-d {
+    grid-area: item-d;
+  }
+  .item-e {
+    grid-area: item-e;
   }
 }
 
@@ -197,21 +195,19 @@ body {
     max-width: 72rem;
   }
 
-  .grid-item {
-    &.item-a {
-      grid-area: item-a;
-    }
-    &.item-b {
-      grid-area: item-b;
-    }
-    &.item-c {
-      grid-area: item-c;
-    }
-    &.item-d {
-      grid-area: item-d;
-    }
-    &.item-e {
-      grid-area: item-e;
-    }
+  .item-a {
+    grid-area: item-a;
+  }
+  .item-b {
+    grid-area: item-b;
+  }
+  .item-c {
+    grid-area: item-c;
+  }
+  .item-d {
+    grid-area: item-d;
+  }
+  .item-e {
+    grid-area: item-e;
   }
 }
