@@ -35,8 +35,9 @@ html {
   scroll-behavior: smooth;
 }
 
-// review later, maybe remove
 body {
+  display: flex;
+  min-height: 100vh;
   font-size: 0.8125rem;
 }
 
@@ -53,57 +54,147 @@ body {
   gap: 1rem;
   border-radius: 0.5rem;
   padding: 2rem;
+}
 
-  &.item-a {
-    background-color: var(--color-purple-500);
+.item-a {
+  background-color: var(--color-purple-500);
+
+  & img {
+    border-color: var(--color-purple-300);
   }
 
-  &.item-b {
-    background-color: var(--color-grey-500);
+  & .author-status,
+  & .item-description {
+    color: var(--color-purple-50);
+  }
+}
+
+.item-b {
+  background-color: var(--color-grey-500);
+
+  & img {
+    border-color: var(--color-grey-200);
   }
 
-  &.item-c,
-  &.item-e {
-    background-color: var(--color-white);
-    color: var(--color-dark-blue);
+  & .author-status,
+  & .item-description {
+    color: var(--color-grey-100);
+  }
+}
+
+.item-c,
+.item-e {
+  background-color: var(--color-white);
+
+  & img {
+    border-color: var(--color-grey-200);
   }
 
-  &.item-d {
-    background-color: var(--color-dark-blue);
+  & .author-name,
+  & .item-header {
+    color: var(--color-grey-500);
+  }
+
+  & .author-status,
+  & .item-description {
+    color: var(--color-grey-400);
+  }
+}
+
+.item-d {
+  background-color: var(--color-dark-blue);
+
+  & img {
+    border-color: var(--color-grey-400);
+  }
+
+  & .author-name,
+  & .item-header {
+    color: var(--color-grey-100);
+  }
+
+  & .author-status,
+  & .item-description {
+    color: var(--color-grey-200);
   }
 }
 
 .author-avatar {
   display: flex;
-  align-items: center;
   gap: 1rem;
 
-  img {
-    border: 0.125rem solid var(--color-white);
+  & img {
+    box-sizing: content-box;
+    border-width: 0.125rem;
+    border-style: solid;
     border-radius: 50%;
-    width: 3rem;
-    height: 3rem;
+    width: 1.75rem;
+    height: 1.75rem;
     object-fit: cover;
   }
 
-  figcaption {
-    font-weight: bold;
-    font-size: 0.875rem;
+  & .author-name {
+    line-height: 1.1;
+  }
+
+  & .author-status {
+    margin-top: 0.25rem;
+    font-size: 0.6875rem;
+    line-height: 1.1;
   }
 }
 
 .item-header {
-  font-weight: bold;
   font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.item-description {
+  line-height: 1.4;
+}
+
+@media (min-width: 48rem) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+      'item-a item-a'
+      'item-b item-c'
+      'item-d item-d'
+      'item-e item-e';
+    margin: 5rem auto;
+    max-width: 41rem;
+  }
+
+  .grid-item {
+    &.item-a {
+      grid-area: item-a;
+    }
+    &.item-b {
+      grid-area: item-b;
+    }
+    &.item-c {
+      grid-area: item-c;
+    }
+    &.item-d {
+      grid-area: item-d;
+    }
+    &.item-e {
+      grid-area: item-e;
+    }
+  }
 }
 
 @media (min-width: 90rem) {
   .grid-container {
     grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     grid-template-areas:
       'item-a item-a item-b item-e'
       'item-c item-d item-d item-e';
-    margin: 4rem 6rem;
+    margin: 14.25rem auto 13.625rem;
+    max-width: 72rem;
   }
 
   .grid-item {
