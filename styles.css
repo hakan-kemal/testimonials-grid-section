@@ -54,6 +54,7 @@ html {
   gap: 1rem;
   border-radius: 0.5rem;
   padding: 2rem;
+  box-shadow: 2.5rem 3.75rem 3.125rem rgba(72, 85, 106, 0.24);
 }
 
 .item-a {
