@@ -207,7 +207,7 @@ html {
     grid-template-areas:
       'item-a item-a item-b item-e'
       'item-c item-d item-d item-e';
-    margin: 14.25rem auto 13.625rem;
+    margin: auto;
     max-width: 72rem;
   }
 
