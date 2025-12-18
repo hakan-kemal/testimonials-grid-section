@@ -25,34 +25,43 @@ This project demonstrates a testimonials grid section featuring five student tes
   - CSS Grid Layout
   - Flexbox Layout
   - Mobile-first workflow
-- **Google Fonts** - [Barlow Semi Condensed](https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap)
+- **Google Fonts** - [Barlow Semi Condensed](https://fonts.google.com/specimen/Barlow+Semi+Condensed)
 
 ### What I Learned
 
 This project reinforced several key concepts:
 
-**Advanced CSS Grid Layouts:** Created a complex testimonial grid using CSS Grid with precise positioning:
+**CSS Grid Layouts:** Created a responsive testimonial grid using CSS Grid with named template areas:
 
 ```css
-.grid-container {
+.testimonials-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  grid-template-areas:
+    'daniel daniel jonathan kira'
+    'jeanette patrick patrick kira';
 }
 
-.item-a {
-  grid-column: 1 / 3;
+.testimonial-daniel {
+  grid-area: daniel;
 }
 ```
 
-**CSS Custom Properties:** Organized design tokens using CSS variables for maintainability:
+**CSS Custom Properties:** Organized color, typography, and spacing values using CSS variables for maintainability:
 
 ```css
 :root {
-  --color-moderate-violet: hsl(263, 55%, 52%);
-  --color-very-dark-grayish-blue: hsl(217, 19%, 35%);
-  --color-very-dark-blackish-blue: hsl(219, 29%, 14%);
+  /* Colors */
+  --color-purple-500: hsl(263, 55%, 52%);
+  --color-grey-500: hsl(217, 19%, 35%);
+  --color-dark-blue: hsl(219, 29%, 14%);
   --color-white: hsl(0, 0%, 100%);
+  /* Spacing */
+  --spacing-200: 1rem;
+  --spacing-400: 2rem;
+  /* Typography */
+  --font-weight-base: 500;
+  --font-weight-semi-bold: 600;
 }
 ```
 
@@ -60,9 +69,22 @@ This project reinforced several key concepts:
 
 ```css
 @media (min-width: 48rem) {
-  .grid-container {
-    display: grid;
+  .testimonials-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      'daniel daniel'
+      'jonathan jeanette'
+      'patrick patrick'
+      'kira kira';
+  }
+}
+
+@media (min-width: 90rem) {
+  .testimonials-container {
     grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      'daniel daniel jonathan kira'
+      'jeanette patrick patrick kira';
   }
 }
 ```
@@ -71,11 +93,11 @@ This project reinforced several key concepts:
 
 Areas I want to focus on in future projects:
 
-- Mastering more complex CSS Grid patterns and asymmetric layouts
-- Exploring CSS subgrid for nested grid layouts
-- Learning JavaScript fundamentals to add interactivity
-- Implementing CSS animations for card hover effects
-- Deepening accessibility knowledge with ARIA patterns
+- Exploring more complex CSS Grid patterns and asymmetric layouts
+- Learning CSS subgrid for nested grid layouts
+- Adding JavaScript interactivity to components
+- Implementing CSS animations and transitions for better UX
+- Improving accessibility with proper ARIA attributes and keyboard navigation
 
 ### Useful Resources
 
